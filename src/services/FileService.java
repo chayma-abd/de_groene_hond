@@ -1,7 +1,7 @@
 package services;
 
 import model.Bestelling;
-import model.plant;
+import model.Plant;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -19,7 +19,7 @@ public class FileService {
 
             writer.write("BESTELDE PLANTEN:\n");
             int teller = 1;
-            for (plant p : bestelling.getPlanten()) {
+            for (Plant p : bestelling.getPlanten()) {
                 writer.write(teller + ". " + p.getArtikelnummer() + " - " +
                         p.getSoort() + " - " + p.getKleur() +
                         " - €" + String.format("%.2f", p.getPrijs()) + "\n");

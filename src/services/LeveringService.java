@@ -1,7 +1,7 @@
 package services;
 
 import model.Bestelling;
-import model.plant;
+import model.Plant;
 import java.time.LocalDate;
 
 /**
@@ -21,7 +21,7 @@ public class LeveringService {
         double totaalVolume = 0;
         double maximaleLengte = 0;
 
-        for (plant p : bestelling.getPlanten()) {
+        for (Plant p : bestelling.getPlanten()) {
             double radius = p.getDiameter() / 2;
             double volume = Math.PI * radius * radius * p.getHoogte();
             totaalVolume += volume;

@@ -10,7 +10,7 @@ import java.util.List;
 public class Bestelling {
     private Klant klant;
     private LocalDate bestelDatum;
-    private List<plant> planten;
+    private List<Plant> planten;
     private boolean isAfgerond;
 
     /**
@@ -26,7 +26,7 @@ public class Bestelling {
     /**
      * Voegt plant toe aan bestelling.
      */
-    public void voegPlantToe(plant plant) {
+    public void voegPlantToe(Plant plant) {
         if (!isAfgerond) {
             planten.add(plant);
         }
@@ -37,7 +37,7 @@ public class Bestelling {
      */
     public double berekenTotaalPrijs() {
         double totaal = 0;
-        for (plant p : planten) {
+        for (Plant p : planten) {
             totaal += p.getPrijs();  // getPrijs() moet bestaan in plant klasse
         }
         return totaal;
@@ -52,7 +52,7 @@ public class Bestelling {
         return bestelDatum;
     }
 
-    public List<plant> getPlanten() {
+    public List<Plant> getPlanten() {
         return new ArrayList<>(planten);
     }
 

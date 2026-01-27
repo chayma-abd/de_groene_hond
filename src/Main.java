@@ -1,4 +1,4 @@
-import model.plant;
+import model.Plant;
 import model.PlantSoort;
 import model.Persoon;
 import model.Klant;
@@ -25,7 +25,7 @@ public class Main {
         System.out.println("=== START ALLE TESTEN ===\n");
 
         // Test 1: Plant
-        plant plant1 = new plant("P001", 1.5, 0.3, 24.99, "Groen", PlantSoort.BOOM);
+        Plant plant1 = new Plant("P001", 1.5, 0.3, 24.99, "Groen", PlantSoort.BOOM);
         System.out.println("Test 1 - Plant: " + plant1);
 
         // Test 2: Persoon
@@ -48,8 +48,8 @@ public class Main {
         Klant testKlant = new Klant("Test Klant", "Straat 1", "000", "test@test.nl", "BE000", false);
         Bestelling bestelling = new Bestelling(testKlant);
 
-        plant plant2 = new plant("P002", 0.8, 0.2, 12.50, "Rood", PlantSoort.STRUIK);
-        plant plant3 = new plant("P003", 2.0, 0.5, 45.00, "Geel", PlantSoort.BOOM);
+        Plant plant2 = new Plant("P002", 0.8, 0.2, 12.50, "Rood", PlantSoort.STRUIK);
+        Plant plant3 = new Plant("P003", 2.0, 0.5, 45.00, "Geel", PlantSoort.BOOM);
 
         bestelling.voegPlantToe(plant1);
         bestelling.voegPlantToe(plant2);
@@ -65,7 +65,7 @@ public class Main {
 
         // Test 7: Grote bestelling
         Bestelling groteBestelling = new Bestelling(testKlant);
-        plant grotePlant = new plant("P004", 3.0, 1.0, 100.00, "Groen", PlantSoort.BOOM);
+        Plant grotePlant = new Plant("P004", 3.0, 1.0, 100.00, "Groen", PlantSoort.BOOM);
         groteBestelling.voegPlantToe(grotePlant);
         System.out.println("\nTest 7 - Grote bestelling:");
         System.out.println("Voertuig nodig: " + LeveringService.bepaalVoertuig(groteBestelling));
