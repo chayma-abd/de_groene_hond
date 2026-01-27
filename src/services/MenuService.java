@@ -12,15 +12,15 @@ import util.ValidatieUtil;
 public class MenuService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Klant> klanten = new ArrayList<>();
-    private static List<plant> planten = new ArrayList<>();
+    private static List<Plant> planten = new ArrayList<>();
     private static Bestelling huidigeBestelling = null;
 
     static {
         // Testdata
         klanten.add(new Klant("Goston Hallemans", "Straat 1", "0123456789",
                 "goston@mail.com", "BE123", false));
-        planten.add(new plant("P001", 1.5, 0.3, 24.99, "Groen", PlantSoort.BOOM));
-        planten.add(new plant("P002", 0.5, 0.2, 12.50, "Rood", PlantSoort.STRUIK));
+        planten.add(new Plant("P001", 1.5, 0.3, 24.99, "Groen", PlantSoort.BOOM));
+        planten.add(new Plant("P002", 0.5, 0.2, 12.50, "Rood", PlantSoort.STRUIK));
     }
 
     public static void toonHoofdmenu() {
