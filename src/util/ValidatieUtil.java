@@ -16,29 +16,10 @@ public class ValidatieUtil {
     }
 
     /**
-     * Controleert of een getal positief is.
-     */
-    public static boolean isPositief(double getal) {
-        return getal > 0;
-    }
-
-    /**
      * Controleert of een BTW-nummer geldig is (simpele versie).
      */
     public static boolean isGeldigBtwNummer(String btw) {
         return btw != null && btw.length() >= 6;
-    }
-
-    /**
-     * Controleert of een datum geldig is.
-     */
-    public static boolean isGeldigeDatum(String datum) {
-        try {
-            LocalDate.parse(datum);
-            return true;
-        } catch (DateTimeParseException e) {
-            return false;
-        }
     }
 
     /**
