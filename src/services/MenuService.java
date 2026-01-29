@@ -1,14 +1,11 @@
 package services;
 
 import model.*;
+import util.ValidatieUtil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import util.ValidatieUtil;
 
-/**
- * Hoofdmenu voor de applicatie.
- */
 public class MenuService {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Klant> klanten = new ArrayList<>();
@@ -16,23 +13,27 @@ public class MenuService {
     private static Bestelling huidigeBestelling = null;
 
     static {
-        // Testdata
         klanten.add(new Klant("Goston Hallemans", "Straat 1", "0123456789",
                 "goston@mail.com", "BE123", false));
+
         planten.add(new Plant("P001", 1.5, 0.3, 24.99, "Groen", PlantSoort.BOOM));
         planten.add(new Plant("P002", 0.5, 0.2, 12.50, "Rood", PlantSoort.STRUIK));
+        planten.add(new Plant("P003", 2.0, 0.5, 35.00, "Geel", PlantSoort.HEESTER));
+        planten.add(new Plant("P004", 0.8, 0.3, 18.75, "Paars", PlantSoort.VASTE_PLANT));
+        planten.add(new Plant("P005", 1.2, 0.4, 42.50, "Blauw", PlantSoort.WATERPLANT));
     }
 
     public static void toonHoofdmenu() {
         while (true) {
-            System.out.println("\n=== DEN GROENEN HOND ===");
+            System.out.println();
+            System.out.println("DE GROENE HOND");
             System.out.println("1. Klant aanmaken");
             System.out.println("2. Bestelling starten");
             System.out.println("3. Plant toevoegen");
             System.out.println("4. Bestelling afronden");
             System.out.println("5. Toon klanten");
             System.out.println("0. Afsluiten");
-            System.out.print("Keuze: ");
+            System.out.print("Keuze:");
 
             int keuze = scanner.nextInt();
             scanner.nextLine();
@@ -44,7 +45,7 @@ public class MenuService {
                 case 4: rondBestellingAf(); break;
                 case 5: toonKlanten(); break;
                 case 0: return;
-                default: System.out.println("Ongeldig!");
+                default: System.out.println("ongeldig");
             }
         }
     }
